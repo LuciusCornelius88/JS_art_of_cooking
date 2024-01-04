@@ -1,6 +1,10 @@
-import * as switchTheme from './switch_theme_functions.js';
+import { switcherCircle, switcherToDark, switcherToLight, switcherToDarkInit, switchToDark, switchToLight } from './switch_theme_functions.js';
 
 const ACTIVE_NAVLINK_KEY = 'current_active_navlink';
+const ACTIVE_STATUS = 'is-active';
+const CURRENT_SWITCHER_STATUS = 'current_switcher_status';
+const SWITCHER_LIGHT_STATUS = 'switcher-icon-circle__init';
+const SWITCHER_DARK_STATUS = 'switcher-icon-circle__revert';
 
 const switcher = document.querySelector('.theme-switcher-btn');
 const homeLink = document.querySelector('a[data-type="home"]');
@@ -13,6 +17,7 @@ function onLoad() {
   switcher.addEventListener('click', onSwitcherClick);
 
   defineActivePage();
+  defineSwitcherStatus();
 }
 
 function defineActivePage() {
@@ -20,32 +25,45 @@ function defineActivePage() {
 
   if (currentActiveLinkId) {
     const currentActiveLink = document.querySelector(`a[data-type="${currentActiveLinkId}"]`);
-    currentActiveLink.classList.add('is-active');
+    currentActiveLink.classList.add(ACTIVE_STATUS);
   } else {
-    homeLink.classList.add('is-active');
+    homeLink.classList.add(ACTIVE_STATUS);
+  }
+}
+
+function defineSwitcherStatus() {
+  const currentSwitcherStatus = localStorage.getItem(CURRENT_SWITCHER_STATUS);
+
+  if (currentSwitcherStatus) {
+    if (currentSwitcherStatus === SWITCHER_LIGHT_STATUS) {
+      switcherToLight();
+      switchToLight();
+    } else {
+      switcherToDark();
+      switchToDark();
+    }
   }
 }
 
 function onNavLinkClick({ target }) {
-  if (!target.classList.contains('is-active')) {
+  if (!target.classList.contains(ACTIVE_STATUS)) {
     const currentActiveLink = document.querySelector('.header-nav-list-item__link.is-active');
-    currentActiveLink.classList.remove('is-active');
+    currentActiveLink.classList.remove(ACTIVE_STATUS);
     localStorage.setItem(ACTIVE_NAVLINK_KEY, target.getAttribute('data-type'));
   }
 }
 
 function onSwitcherClick() {
-  const { switcherCircle } = switchTheme;
-  const { switcherToDark, switcherToLight, switcherToDarkInit } = switchTheme;
-  const { switchToDark, switchToLight } = switchTheme;
-
-  if (switcherCircle.classList.contains('switcher-icon-circle__init')) {
+  if (switcherCircle.classList.contains(SWITCHER_LIGHT_STATUS)) {
+    localStorage.setItem(CURRENT_SWITCHER_STATUS, SWITCHER_DARK_STATUS);
     switcherToDark();
     switchToDark();
-  } else if (switcherCircle.classList.contains('switcher-icon-circle__revert')) {
+  } else if (switcherCircle.classList.contains(SWITCHER_DARK_STATUS)) {
+    localStorage.setItem(CURRENT_SWITCHER_STATUS, SWITCHER_LIGHT_STATUS);
     switcherToLight();
     switchToLight();
   } else {
+    localStorage.setItem(CURRENT_SWITCHER_STATUS, SWITCHER_DARK_STATUS);
     switcherToDarkInit();
     switchToDark();
   }
