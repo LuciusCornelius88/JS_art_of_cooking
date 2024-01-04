@@ -2,9 +2,8 @@
   --font-family: 'Inter', sans-serif;
   --main-width: 1110px;
   --main-section-padding: 50px;
-  --bg-color: #f8f8f8;
+  --bg-color-light: #f8f8f8;
   --bg-color-dark: #161616;
-  --color-dark: #fff;
   --transition-duration-and-func: 100ms linear;
 }
 
@@ -39,7 +38,6 @@ body {
   font-family: var(--font-family);
   max-width: 1280px;
   margin: 0 auto;
-  background-color: var(--bg-color);
 }
 
 textarea {
@@ -71,12 +69,152 @@ section {
   border: 1px solid tomato;
 }
 
-.dark-background {
+.bg-light {
+  background-color: var(--bg-color-light);
+}
+
+.bg-dark {
   background-color: var(--bg-color-dark);
 }
 
-.dark-font {
-  color: var(--color-dark);
+.header-light-font {
+  color: #050505;
+}
+
+.header-dark-font {
+  color: #fff;
+}
+
+.hero-light-font {
+  color: #050505;
+}
+
+.hero-dark-font {
+  color: #fff;
+}
+
+.svg-light-fill {
+  stroke: #050505;
+}
+
+.svg-dark-fill {
+  stroke: #fff;
+}
+
+.slider-light-font {
+  color: rgba(248, 248, 248, 0.6);
+}
+
+.slider-dark-font {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.popular-recipes-title-light-font {
+  color: #050505;
+}
+
+.popular-recipes-title-dark-font {
+  color: #fff;
+}
+
+.popular-recipes-descr-light-font {
+  color: rgba(5, 5, 5, 0.8);
+}
+
+.popular-recipes-descr-dark-font {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.filters-light-font {
+  color: rgba(5, 5, 5, 0.5);
+}
+
+.filters-dark-font {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.filters-border-light {
+  border-color: rgba(5, 5, 5, 0.2);
+}
+
+.filters-border-dark {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.search-icon-fill-light {
+  fill: #05050580;
+}
+
+.search-icon-fill-dark {
+  fill: #ffffff80;
+}
+
+.dropdown-fill-light {
+  stroke: #05050580;
+}
+
+.dropdown-fill-dark {
+  stroke: #ffffff80;
+}
+
+.categories-border-light {
+  border-color: rgba(5, 5, 5, 0.2);
+}
+
+.categories-border-dark {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.categories-title-light-font {
+  color: rgba(5, 5, 5, 0.5);
+}
+
+.categories-title-dark-font {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.categories-items-light-font {
+  color: rgba(5, 5, 5, 0.3);
+}
+
+.categories-items-dark-font {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.recipes-light-font {
+  color: #f8f8f8;
+}
+
+.recipes-title-dark-font {
+  color: #fff;
+}
+
+.recipes-button-dark-font {
+  color: #fff;
+}
+
+.recipes-descr-dark-font {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.recipes-rating-dark-font {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.pagination-light-font {
+  color: #050505;
+}
+
+.pagination-dark-font {
+  color: #fff;
+}
+
+.pagination-border-light {
+  border-color: rgba(5, 5, 5, 0.3);
+}
+
+.pagination-border-dark {
+  border-color: rgba(255, 255, 255, 0.3);
 }
 
 /* ================== HEADER ================== */
@@ -100,7 +238,6 @@ section {
 }
 
 .logo {
-  color: #050505;
   font-size: 18px;
   font-style: normal;
   font-weight: 600;
@@ -113,7 +250,6 @@ section {
 }
 
 .header-nav-list-item__link {
-  color: #050505;
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
@@ -134,7 +270,6 @@ section {
 .shopping-cart-btn {
   display: flex;
   align-items: center;
-  background-color: var(--bg-color);
   border: none;
   padding: 0;
 }
@@ -148,7 +283,6 @@ section {
   position: relative;
   display: flex;
   align-items: center;
-  background-color: var(--bg-color);
   border: none;
   padding: 0;
 }
@@ -202,7 +336,6 @@ section {
 }
 
 .hero-title {
-  color: #050505;
   font-size: 36px;
   font-style: normal;
   font-weight: 600;
@@ -221,7 +354,6 @@ section {
 }
 
 .hero-text {
-  color: #050505;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -231,7 +363,6 @@ section {
 }
 
 .order-button {
-  color: #050505;
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
@@ -241,7 +372,6 @@ section {
   padding: 14px 28px;
   border: 1px solid #9bb537;
   border-radius: 15px;
-  background-color: var(--bg-color);
 }
 
 /* ================== CONTENT-BLOCK ================== */
@@ -265,7 +395,6 @@ section {
 }
 
 .categories-title {
-  color: rgba(5, 5, 5, 0.5);
   font-size: 18px;
   font-style: normal;
   font-weight: 500;
@@ -274,12 +403,11 @@ section {
   height: 52px;
   padding: 14px 28px;
   border-radius: 15px;
-  border: 1px solid rgba(5, 5, 5, 0.2);
+  border: 1px solid;
   margin-bottom: 42px;
 }
 
 .category-item {
-  color: rgba(5, 5, 5, 0.3);
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
@@ -291,7 +419,6 @@ section {
 }
 
 .popular-recipes-title {
-  color: #050505;
   font-size: 24px;
   font-style: normal;
   font-weight: 600;
@@ -323,7 +450,6 @@ section {
   flex-direction: column;
   justify-content: center;
   gap: 8px;
-  color: rgba(5, 5, 5, 0.5);
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
@@ -338,7 +464,7 @@ section {
   width: 280px;
   height: 50px;
   padding: 14px 122px 14px 48px;
-  border: 1px solid rgba(5, 5, 5, 0.2);
+  border: 1px solid;
   border-radius: 15px;
   background: transparent;
 }
@@ -349,11 +475,9 @@ section {
   top: 15px;
   width: 18px;
   height: 18px;
-  fill: rgba(5, 5, 5, 0.5);
 }
 
 .select-option {
-  color: rgba(5, 5, 5, 0.5);
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
@@ -363,7 +487,6 @@ section {
 .select-content {
   position: relative;
   z-index: 1000;
-  color: rgba(5, 5, 5, 0.5);
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
@@ -388,7 +511,7 @@ section {
   height: 48px;
   padding: 14px 18px;
   border-radius: 15px;
-  border: 1px solid rgba(5, 5, 5, 0.2);
+  border: 1px solid;
 }
 
 .filter-area-select {
@@ -396,7 +519,7 @@ section {
   height: 48px;
   padding: 14px 18px;
   border-radius: 15px;
-  border: 1px solid rgba(5, 5, 5, 0.2);
+  border: 1px solid;
 }
 
 .filter-ingredients-select {
@@ -404,19 +527,17 @@ section {
   height: 48px;
   padding: 14px 18px;
   border-radius: 15px;
-  border: 1px solid rgba(5, 5, 5, 0.2);
+  border: 1px solid;
 }
 
 .reset-filters-btn {
   display: flex;
   align-items: center;
   gap: 4px;
-  color: rgba(5, 5, 5, 0.5);
   font-size: 12px;
   font-style: normal;
   font-weight: 500;
   line-height: 1.333;
-  background-color: var(--bg-color);
   border: none;
   padding: none;
 }
@@ -460,8 +581,7 @@ section {
 }
 
 .numbered-btn {
-  border: 1px solid rgba(5, 5, 5, 0.3);
-  background-color: var(--bg-color);
+  border: 1px solid;
 }
 
 .next-btns {

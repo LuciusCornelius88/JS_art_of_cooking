@@ -1,16 +1,10 @@
+import * as switchTheme from './switch_theme_functions.js';
+
 const ACTIVE_NAVLINK_KEY = 'current_active_navlink';
 
-const body = document.querySelector('body');
-const header = document.querySelector('header');
-const hero = document.querySelector('.hero');
-const popularRecipes = document.querySelector('.popular-recipes');
-
+const switcher = document.querySelector('.theme-switcher-btn');
 const homeLink = document.querySelector('a[data-type="home"]');
 const navLinks = document.querySelectorAll('.header-nav-list-item__link');
-
-const switcher = document.querySelector('.theme-switcher-btn');
-const switcherRect = document.querySelector('.switcher-icon-rect');
-const switcherCircle = document.querySelector('.switcher-icon-circle');
 
 onLoad();
 
@@ -41,19 +35,18 @@ function onNavLinkClick({ target }) {
 }
 
 function onSwitcherClick() {
-  if (switcherCircle.classList.contains('switcher-icon-circle__revert')) {
-    switcherCircle.classList.remove('switcher-icon-circle__revert');
-    switcherCircle.classList.add('switcher-icon-circle__init');
-    switcherRect.classList.remove('switcher-icon-rect__dark');
-    body.classList.remove('dark-background');
-  } else if (switcherCircle.classList.contains('switcher-icon-circle__init')) {
-    switcherCircle.classList.remove('switcher-icon-circle__init');
-    switcherCircle.classList.add('switcher-icon-circle__revert');
-    switcherRect.classList.add('switcher-icon-rect__dark');
-    body.classList.add('dark-background');
+  const { switcherCircle } = switchTheme;
+  const { switcherToDark, switcherToLight, switcherToDarkInit } = switchTheme;
+  const { switchToDark, switchToLight } = switchTheme;
+
+  if (switcherCircle.classList.contains('switcher-icon-circle__init')) {
+    switcherToDark();
+    switchToDark();
+  } else if (switcherCircle.classList.contains('switcher-icon-circle__revert')) {
+    switcherToLight();
+    switchToLight();
   } else {
-    switcherCircle.classList.add('switcher-icon-circle__revert');
-    switcherRect.classList.add('switcher-icon-rect__dark');
-    body.classList.add('dark-background');
+    switcherToDarkInit();
+    switchToDark();
   }
 }

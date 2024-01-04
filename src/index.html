@@ -18,29 +18,29 @@
     />
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
-  <body>
+  <body class="bg-light">
     <header class="header">
       <div class="container header-container">
         <nav class="header-nav">
           <ul class="header-nav-list">
             <li class="header-nav-list-item">
-              <a class="header-nav-list-item__link" href="./index.html" data-type="home">Home</a>
+              <a class="header-nav-list-item__link header-light-font" href="./index.html" data-type="home">Home</a>
             </li>
             <li class="header-nav-list-item">
-              <a class="header-nav-list-item__link" href="./favorites.html" data-type="favorites">Favorites</a>
+              <a class="header-nav-list-item__link header-light-font" href="./favorites.html" data-type="favorites">Favorites</a>
             </li>
           </ul>
         </nav>
         <div class="logo-container">
-          <a href="./" class="logo"><span class="logo-first-part">tasty</span>treats.</a>
+          <a href="./" class="logo header-light-font"><span class="logo-first-part">tasty</span>treats.</a>
         </div>
         <div class="header-buttons">
-          <button class="shopping-cart-btn">
-            <svg class="shopping-cart-icon">
+          <button class="js-nav-btn shopping-cart-btn bg-light">
+            <svg class="shopping-cart-icon svg-light-fill">
               <use href="./images/sprite.svg#icon-shopping-cart"></use>
             </svg>
           </button>
-          <button class="theme-switcher-btn">
+          <button class="js-nav-btn theme-switcher-btn bg-light">
             <svg class="switcher-icon-rect">
               <use href="./images/sprite.svg#icon-switch-rect"></use>
             </svg>
@@ -57,9 +57,9 @@
         <div class="container hero-container">
           <div class="hero-description-container">
             <h2 hidden="" class="section-header">Hero title</h2>
-            <p class="hero-title">Learn to Cook <span class="hero-title-name">Tasty Treats'</span> Customizable Masterclass</p>
-            <p class="hero-text">TastyTreats - Customize Your Meal with Ingredient Options and Step-by-Step Video Guides.</p>
-            <button class="order-button">Order now</button>
+            <p class="hero-title hero-light-font">Learn to Cook <span class="hero-title-name">Tasty Treats'</span> Customizable Masterclass</p>
+            <p class="hero-text hero-light-font">TastyTreats - Customize Your Meal with Ingredient Options and Step-by-Step Video Guides.</p>
+            <button class="order-button hero-light-font bg-light">Order now</button>
           </div>
           <div class="hero-slider-container"></div>
         </div>
@@ -70,8 +70,8 @@
           <section class="categories">
             <div class="categories-container">
               <h2 hidden="" class="section-header">Categories</h2>
-              <p class="categories-title">All categories</p>
-              <ul class="categories-list">
+              <p class="categories-title categories-title-light-font categories-border-light">All categories</p>
+              <ul class="categories-list categories-items-light-font">
                 <li class="category-item">Category 1</li>
                 <li class="category-item">Category 2</li>
                 <li class="category-item">Category 3</li>
@@ -83,8 +83,8 @@
           <section class="popular-recipes">
             <div class="popular-recipes-container">
               <h2 hidden="" class="section-header">Popular recipes</h2>
-              <p class="popular-recipes-title">Popular recipes</p>
-              <ul class="popular-recipes-list">
+              <p class="popular-recipes-title popular-recipes-title-light-font">Popular recipes</p>
+              <ul class="popular-recipes-list popular-recipes-descr-light-font">
                 <li class="popular-recipes-item">Recipe 1</li>
                 <li class="popular-recipes-item">Recipe 2</li>
                 <li class="popular-recipes-item">Recipe 3</li>
@@ -101,56 +101,56 @@
           <div class="filters-container">
             <form class="filters-form">
               <div class="form-fileds-container">
-                <label class="label filter-search-label">
+                <label class="label filter-search-label filters-light-font">
                   Search
                   <div class="search-input-container">
-                    <input type="text" class="filter-search-input" placeholder="Enter Text" />
-                    <svg class="search-icon">
+                    <input type="text" class="filter-search-input filters-light-font filters-border-light" placeholder="Enter Text" />
+                    <svg class="search-icon search-icon-fill-light">
                       <use href="./images/sprite.svg#icon-search"></use>
                     </svg>
                   </div>
                 </label>
-                <label class="label filter-time-label">
+                <label class="label filter-time-label filters-light-font">
                   Time
                   <div class="select-container">
-                    <select name="time-select" class="filter-time-select select-content">
-                      <option class="select-option" value="time_1">time_1</option>
-                      <option class="select-option" value="time_2">time_2</option>
-                      <option class="select-option" value="time_3">time_3</option>
+                    <select name="time-select" class="filter-time-select select-content filters-light-font filters-border-light">
+                      <option class="select-option filters-light-font" value="time_1">time_1</option>
+                      <option class="select-option filters-light-font" value="time_2">time_2</option>
+                      <option class="select-option filters-light-font" value="time_3">time_3</option>
                     </select>
-                    <svg class="dropdown-array-icon">
+                    <svg class="dropdown-array-icon dropdown-fill-light">
                       <use href="./images/sprite.svg#icon-arrow-down"></use>
                     </svg>
                   </div>
                 </label>
-                <label class="label filter-area-label">
+                <label class="label filter-area-label filters-light-font">
                   Area
                   <div class="select-container">
-                    <select name="area-select" class="filter-area-select select-content">
-                      <option class="select-option" value="area">area_1</option>
-                      <option class="select-option" value="area">area_2</option>
-                      <option class="select-option" value="area">area_3</option>
+                    <select name="area-select" class="filter-area-select select-content filters-light-font filters-border-light">
+                      <option class="select-option filters-light-font" value="area">area_1</option>
+                      <option class="select-option filters-light-font" value="area">area_2</option>
+                      <option class="select-option filters-light-font" value="area">area_3</option>
                     </select>
-                    <svg class="dropdown-array-icon">
+                    <svg class="dropdown-array-icon dropdown-fill-light">
                       <use href="./images/sprite.svg#icon-arrow-down"></use>
                     </svg>
                   </div>
                 </label>
-                <label class="label filter-ingredients-label">
+                <label class="label filter-ingredients-label filters-light-font">
                   Ingredients
                   <div class="select-container">
-                    <select name="ingredients-select" class="filter-ingredients-select select-content">
-                      <option class="select-option" value="ingredients_1">ingredients_1</option>
-                      <option class="select-option" value="ingredients_2">ingredients_2</option>
-                      <option class="select-option" value="ingredients_3">ingredients_3</option>
+                    <select name="ingredients-select" class="filter-ingredients-select select-content filters-light-font filters-border-light">
+                      <option class="select-option filters-light-font" value="ingredients_1">ingredients_1</option>
+                      <option class="select-option filters-light-font" value="ingredients_2">ingredients_2</option>
+                      <option class="select-option filters-light-font" value="ingredients_3">ingredients_3</option>
                     </select>
-                    <svg class="dropdown-array-icon">
+                    <svg class="dropdown-array-icon dropdown-fill-light">
                       <use href="./images/sprite.svg#icon-arrow-down"></use>
                     </svg>
                   </div>
                 </label>
               </div>
-              <button type="reset" class="reset-filters-btn">
+              <button type="reset" class="reset-filters-btn bg-light filters-light-font">
                 <svg class="reset-close-icon">
                   <use href="./images/sprite.svg#icon-x"></use>
                 </svg>
@@ -187,10 +187,10 @@
                 </button>
               </div>
               <div class="numbered-btns">
-                <button class="pagination-btn numbered-btn">1</button>
-                <button class="pagination-btn numbered-btn">2</button>
-                <button class="pagination-btn numbered-btn">3</button>
-                <button class="pagination-btn numbered-btn">...</button>
+                <button class="pagination-btn numbered-btn bg-light pagination-border-light pagination-light-font">1</button>
+                <button class="pagination-btn numbered-btn bg-light pagination-border-light pagination-light-font">2</button>
+                <button class="pagination-btn numbered-btn bg-light pagination-border-light pagination-light-font">3</button>
+                <button class="pagination-btn numbered-btn bg-light pagination-border-light pagination-light-font">...</button>
               </div>
               <div class="next-btns">
                 <button class="pagination-btn next-btn">
