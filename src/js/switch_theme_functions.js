@@ -52,15 +52,19 @@ export function switcherToDarkInit() {
   switcherRect.classList.add('switcher-icon-rect__dark');
 }
 
+export function switcherToLightInit() {
+  switcherCircle.classList.add('switcher-icon-circle__home');
+}
+
 export function switcherToDark() {
-  switcherCircle.classList.remove('switcher-icon-circle__init');
+  switcherCircle.classList.remove('switcher-icon-circle__home');
   switcherCircle.classList.add('switcher-icon-circle__revert');
   switcherRect.classList.add('switcher-icon-rect__dark');
 }
 
 export function switcherToLight() {
   switcherCircle.classList.remove('switcher-icon-circle__revert');
-  switcherCircle.classList.add('switcher-icon-circle__init');
+  switcherCircle.classList.add('switcher-icon-circle__home');
   switcherRect.classList.remove('switcher-icon-rect__dark');
 }
 

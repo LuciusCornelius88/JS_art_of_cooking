@@ -313,7 +313,7 @@ section {
   transition: transform var(--transition-duration-and-func);
 }
 
-.switcher-icon-circle__init {
+.switcher-icon-circle__home {
   transform: translate(0, -50%);
   transition: transform var(--transition-duration-and-func);
 }

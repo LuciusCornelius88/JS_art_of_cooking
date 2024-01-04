@@ -1,9 +1,17 @@
-import { switcherCircle, switcherToDark, switcherToLight, switcherToDarkInit, switchToDark, switchToLight } from './switch_theme_functions.js';
+import {
+  switcherCircle,
+  switcherToDark,
+  switcherToLight,
+  switcherToLightInit,
+  switcherToDarkInit,
+  switchToDark,
+  switchToLight,
+} from './switch_theme_functions.js';
 
 const ACTIVE_NAVLINK_KEY = 'current_active_navlink';
 const ACTIVE_STATUS = 'is-active';
 const CURRENT_SWITCHER_STATUS = 'current_switcher_status';
-const SWITCHER_LIGHT_STATUS = 'switcher-icon-circle__init';
+const SWITCHER_LIGHT_STATUS = 'switcher-icon-circle__home';
 const SWITCHER_DARK_STATUS = 'switcher-icon-circle__revert';
 
 const switcher = document.querySelector('.theme-switcher-btn');
@@ -36,10 +44,10 @@ function defineSwitcherStatus() {
 
   if (currentSwitcherStatus) {
     if (currentSwitcherStatus === SWITCHER_LIGHT_STATUS) {
-      switcherToLight();
+      switcherToLightInit();
       switchToLight();
     } else {
-      switcherToDark();
+      switcherToDarkInit();
       switchToDark();
     }
   }
