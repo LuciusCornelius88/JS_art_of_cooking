@@ -13,7 +13,8 @@ export function switchToDark() {
   switchCategoriesTitleToDark();
   switchCategoryItemToDark();
   switchPopularRecipesTitleToDark();
-  switchPopularRecipesDescrToDark();
+  switchPopularRecipeSubtitleToDark();
+  switchPopularRecipeDescrToDark();
   switchLabelsToDark();
   switchSelectsToDark();
   switchSearchInputToDark();
@@ -36,7 +37,8 @@ export function switchToLight() {
   switchCategoriesTitleToLight();
   switchCategoryItemToLight();
   switchPopularRecipesTitleToLight();
-  switchPopularRecipesDescrToLight();
+  switchPopularRecipeSubtitleToLight();
+  switchPopularRecipeDescrToLight();
   switchLabelsToLight();
   switchSelectsToLight();
   switchSearchInputToLight();
@@ -177,31 +179,55 @@ function switchHeroButtonToLight() {
 }
 
 function switchCategoriesTitleToDark() {
-  const title = document.querySelector('.categories-title');
+  const title = document.querySelector('.all-categories-btn');
   title.classList.remove('categories-title-light-font');
   title.classList.add('categories-title-dark-font');
   title.classList.remove('categories-border-light');
   title.classList.add('categories-border-dark');
+  title.classList.remove('bg-light');
+  title.classList.add('bg-dark');
 }
 
 function switchCategoriesTitleToLight() {
-  const title = document.querySelector('.categories-title');
+  const title = document.querySelector('.all-categories-btn');
   title.classList.remove('categories-title-dark-font');
   title.classList.add('categories-title-light-font');
   title.classList.remove('categories-border-dark');
   title.classList.add('categories-border-light');
+  title.classList.remove('bg-dark');
+  title.classList.add('bg-light');
 }
 
 function switchCategoryItemToDark() {
-  const text = document.querySelector('.categories-list');
-  text.classList.remove('categories-items-light-font');
-  text.classList.add('categories-items-dark-font');
+  const categorisList = document.querySelector('.categories-list');
+  categorisList.classList.remove('categories-items-light-font');
+  categorisList.classList.add('categories-items-dark-font');
+  categorisList.classList.remove('bg-light');
+  categorisList.classList.add('bg-dark');
+
+  // const categoriesList = document.querySelectorAll('.category-item-button');
+  // categoriesList.forEach((item) => {
+  //   item.classList.remove('categories-items-light-font');
+  //   item.classList.add('categories-items-dark-font');
+  //   item.classList.remove('bg-light');
+  //   item.classList.add('bg-dark');
+  // });
 }
 
 function switchCategoryItemToLight() {
-  const text = document.querySelector('.categories-list');
-  text.classList.remove('categories-items-dark-font');
-  text.classList.add('categories-items-light-font');
+  const categorisList = document.querySelector('.categories-list');
+  categorisList.classList.remove('categories-items-dark-font');
+  categorisList.classList.add('categories-items-light-font');
+  categorisList.classList.remove('bg-dark');
+  categorisList.classList.add('bg-light');
+
+  // const categoriesList = document.querySelectorAll('.category-item-button');
+  // categoriesList.forEach((item) => {
+  //   item.classList.remove('categories-items-dark-font');
+  //   item.classList.add('categories-items-light-font');
+  //   item.classList.remove('bg-dark');
+  //   item.classList.add('bg-light');
+  // });
 }
 //
 function switchPopularRecipesTitleToDark() {
@@ -216,16 +242,36 @@ function switchPopularRecipesTitleToLight() {
   title.classList.add('popular-recipes-title-light-font');
 }
 
-function switchPopularRecipesDescrToDark() {
-  const descr = document.querySelector('.popular-recipes-list');
-  descr.classList.remove('popular-recipes-descr-light-font');
-  descr.classList.add('popular-recipes-descr-dark-font');
+function switchPopularRecipeSubtitleToDark() {
+  const subtitles = document.querySelectorAll('.popular-recipe-subtitle');
+  subtitles.forEach((item) => {
+    item.classList.remove('popular-recipes-subtitle-light-font');
+    item.classList.add('popular-recipes-subtitle-dark-font');
+  });
 }
 
-function switchPopularRecipesDescrToLight() {
-  const descr = document.querySelector('.popular-recipes-list');
-  descr.classList.remove('popular-recipes-descr-dark-font');
-  descr.classList.add('popular-recipes-descr-light-font');
+function switchPopularRecipeSubtitleToLight() {
+  const subtitles = document.querySelectorAll('.popular-recipe-subtitle');
+  subtitles.forEach((item) => {
+    item.classList.remove('popular-recipes-subtitle-dark-font');
+    item.classList.add('popular-recipes-subtitle-light-font');
+  });
+}
+
+function switchPopularRecipeDescrToDark() {
+  const descriptions = document.querySelectorAll('.popular-recipe-description');
+  descriptions.forEach((item) => {
+    item.classList.remove('popular-recipes-descr-light-font');
+    item.classList.add('popular-recipes-descr-dark-font');
+  });
+}
+
+function switchPopularRecipeDescrToLight() {
+  const descriptions = document.querySelectorAll('.popular-recipe-description');
+  descriptions.forEach((item) => {
+    item.classList.remove('popular-recipes-descr-dark-font');
+    item.classList.add('popular-recipes-descr-light-font');
+  });
 }
 
 function switchLabelsToDark() {

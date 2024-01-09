@@ -29,8 +29,8 @@ export async function fetchAreas() {
   const { areasEndpoint } = requestConfig;
 
   try {
-    const result = await axios.get(areasEndpoint);
-    return result;
+    const result = await axiosInstanse.get(areasEndpoint);
+    return result.data;
   } catch (error) {
     console.log('error :>> ', error);
   }
@@ -40,8 +40,19 @@ export async function fetchIngredients() {
   const { ingredientsEndpoint } = requestConfig;
 
   try {
-    const result = await axios.get(ingredientsEndpoint);
-    return result;
+    const result = await axiosInstanse.get(ingredientsEndpoint);
+    return result.data;
+  } catch (error) {
+    console.log('error :>> ', error);
+  }
+}
+
+export async function fetchRecipes(params) {
+  const { recipesBaseEndpoint } = requestConfig;
+
+  try {
+    const result = await axiosInstanse.get(recipesBaseEndpoint, { params: params });
+    return result.data;
   } catch (error) {
     console.log('error :>> ', error);
   }
@@ -51,11 +62,9 @@ export async function fetchTime() {
   const { recipesBaseEndpoint } = requestConfig;
 
   try {
-    const result = await axios.get(recipesBaseEndpoint);
+    const result = await axiosInstanse.get(recipesBaseEndpoint);
     return result;
   } catch (error) {
     console.log('error :>> ', error);
   }
 }
-
-export async function fetchRecipes() {}

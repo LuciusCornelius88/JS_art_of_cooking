@@ -70,15 +70,17 @@
           <section class="categories">
             <div class="categories-container">
               <h2 hidden="" class="section-header">Categories</h2>
-              <p class="categories-title categories-title-light-font categories-border-light">All categories</p>
-              <ul class="categories-list categories-items-light-font"></ul>
+              <button data-value="" class="all-categories-btn bg-light categories-title-light-font categories-border-light category-is-active">
+                All categories
+              </button>
+              <ul class="categories-list bg-light categories-items-light-font"></ul>
             </div>
           </section>
           <section class="popular-recipes">
             <div class="popular-recipes-container">
               <h2 hidden="" class="section-header">Popular recipes</h2>
               <p class="popular-recipes-title popular-recipes-title-light-font">Popular recipes</p>
-              <ul class="popular-recipes-list popular-recipes-descr-light-font"></ul>
+              <ul class="popular-recipes-list"></ul>
             </div>
           </section>
         </div>
@@ -101,11 +103,7 @@
                 <label class="label filter-time-label filters-light-font">
                   Time
                   <div class="select-container">
-                    <select name="time-select" class="filter-time-select select-content filters-light-font filters-border-light">
-                      <option class="select-option filters-light-font" value="time_1">time_1</option>
-                      <option class="select-option filters-light-font" value="time_2">time_2</option>
-                      <option class="select-option filters-light-font" value="time_3">time_3</option>
-                    </select>
+                    <select name="time-select" class="filter-time-select select-content filters-light-font filters-border-light"></select>
                     <svg class="dropdown-array-icon dropdown-fill-light">
                       <use href="./images/sprite.svg#icon-arrow-down"></use>
                     </svg>
@@ -114,11 +112,7 @@
                 <label class="label filter-area-label filters-light-font">
                   Area
                   <div class="select-container">
-                    <select name="area-select" class="filter-area-select select-content filters-light-font filters-border-light">
-                      <option class="select-option filters-light-font" value="area">area_1</option>
-                      <option class="select-option filters-light-font" value="area">area_2</option>
-                      <option class="select-option filters-light-font" value="area">area_3</option>
-                    </select>
+                    <select name="area-select" class="filter-area-select select-content filters-light-font filters-border-light"></select>
                     <svg class="dropdown-array-icon dropdown-fill-light">
                       <use href="./images/sprite.svg#icon-arrow-down"></use>
                     </svg>
@@ -127,11 +121,10 @@
                 <label class="label filter-ingredients-label filters-light-font">
                   Ingredients
                   <div class="select-container">
-                    <select name="ingredients-select" class="filter-ingredients-select select-content filters-light-font filters-border-light">
-                      <option class="select-option filters-light-font" value="ingredients_1">ingredients_1</option>
-                      <option class="select-option filters-light-font" value="ingredients_2">ingredients_2</option>
-                      <option class="select-option filters-light-font" value="ingredients_3">ingredients_3</option>
-                    </select>
+                    <select
+                      name="ingredients-select"
+                      class="filter-ingredients-select select-content filters-light-font filters-border-light"
+                    ></select>
                     <svg class="dropdown-array-icon dropdown-fill-light">
                       <use href="./images/sprite.svg#icon-arrow-down"></use>
                     </svg>
@@ -147,17 +140,7 @@
             </form>
           </div>
           <div class="recipes-list-container">
-            <ul class="recipes-list">
-              <li class="recipe-list-item">Recipe_1</li>
-              <li class="recipe-list-item">Recipe_2</li>
-              <li class="recipe-list-item">Recipe_3</li>
-              <li class="recipe-list-item">Recipe_4</li>
-              <li class="recipe-list-item">Recipe_5</li>
-              <li class="recipe-list-item">Recipe_6</li>
-              <li class="recipe-list-item">Recipe_7</li>
-              <li class="recipe-list-item">Recipe_8</li>
-              <li class="recipe-list-item">Recipe_9</li>
-            </ul>
+            <ul class="recipes-list"></ul>
             <div class="pagination-btns">
               <div class="prev-btns">
                 <button class="pagination-btn prev-btn">
