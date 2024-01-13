@@ -458,6 +458,21 @@ section {
   overflow-y: scroll;
 }
 
+.categories-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.categories-list::-webkit-scrollbar-track {
+  border-radius: 12px;
+}
+
+.categories-list::-webkit-scrollbar-thumb {
+  width: 8px;
+  height: 201px;
+  background: rgba(5, 5, 5, 0.18);
+  border-radius: 12px;
+}
+
 .category-item:not(:last-child) {
   margin-bottom: 24px;
 }
@@ -468,7 +483,7 @@ section {
   font-weight: 500;
   line-height: 1.25;
   border: none;
-  padding: none;
+  padding: 0;
   color: inherit;
   background-color: inherit;
 }
@@ -588,24 +603,18 @@ section {
   height: 18px;
 }
 
-.select-option {
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 1.25px;
+.select-container {
+  position: relative;
 }
 
-.select-content {
+.select-btn {
   position: relative;
   z-index: 1000;
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
   background: transparent;
-}
-
-.select-container {
-  position: relative;
+  text-align: start;
 }
 
 .dropdown-array-icon {
@@ -615,6 +624,64 @@ section {
   transform: translate(0, -50%);
   width: 18px;
   height: 18px;
+}
+
+.select-dropdown-container {
+  position: absolute;
+  z-index: 1000;
+  top: 48px;
+  width: 188px;
+  height: 188px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-right: 6px;
+  border-radius: 14px;
+  background-color: #fff;
+  box-shadow: 0px 4px 36px 0px rgba(0, 0, 0, 0.02);
+}
+
+.select-inner-container {
+  width: 182px;
+  height: 172px;
+  padding-left: 18px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  overflow-y: scroll;
+}
+
+.select-inner-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.select-inner-container::-webkit-scrollbar-track {
+  border-radius: 12px;
+}
+
+.select-inner-container::-webkit-scrollbar-thumb {
+  width: 6px;
+  height: 69px;
+  background: rgba(5, 5, 5, 0.1);
+  border-radius: 12px;
+}
+
+.select-option:not(:last-child) {
+  margin-bottom: 8px;
+}
+
+.select-option-btn {
+  width: 100%;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.25;
+  text-align: start;
+  border: none;
+  padding: 0;
+  color: inherit;
+  background-color: inherit;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .filter-time-select {
@@ -650,7 +717,7 @@ section {
   font-weight: 500;
   line-height: 1.333;
   border: none;
-  padding: none;
+  padding: 0;
 }
 
 .reset-close-icon {

@@ -103,7 +103,19 @@
                 <label class="label filter-time-label filters-light-font">
                   Time
                   <div class="select-container">
-                    <select name="time-select" class="filter-time-select select-content filters-light-font filters-border-light"></select>
+                    <button
+                      class="filter-time-select select-btn filters-light-font filters-border-light"
+                      role="combobox"
+                      type="button"
+                      aria-haspopup="listbox"
+                      aria-controls="select-dropdown"
+                      data-value=""
+                    ></button>
+                    <div class="select-dropdown-container time-dropdown hidden">
+                      <div class="select-inner-container">
+                        <ul class="select-dropdown-list time-list" role="listbox" id="select-dropdown"></ul>
+                      </div>
+                    </div>
                     <svg class="dropdown-array-icon dropdown-fill-light">
                       <use href="./images/sprite.svg#icon-arrow-down"></use>
                     </svg>
@@ -112,7 +124,19 @@
                 <label class="label filter-area-label filters-light-font">
                   Area
                   <div class="select-container">
-                    <select name="area-select" class="filter-area-select select-content filters-light-font filters-border-light"></select>
+                    <button
+                      class="filter-area-select select-btn filters-light-font filters-border-light"
+                      role="combobox"
+                      type="button"
+                      aria-haspopup="listbox"
+                      aria-controls="select-dropdown"
+                      data-value=""
+                    ></button>
+                    <div class="select-dropdown-container area-dropdown hidden">
+                      <div class="select-inner-container">
+                        <ul class="select-dropdown-list area-list" role="listbox" id="select-dropdown"></ul>
+                      </div>
+                    </div>
                     <svg class="dropdown-array-icon dropdown-fill-light">
                       <use href="./images/sprite.svg#icon-arrow-down"></use>
                     </svg>
@@ -121,10 +145,19 @@
                 <label class="label filter-ingredients-label filters-light-font">
                   Ingredients
                   <div class="select-container">
-                    <select
-                      name="ingredients-select"
-                      class="filter-ingredients-select select-content filters-light-font filters-border-light"
-                    ></select>
+                    <button
+                      class="filter-ingredients-select select-btn filters-light-font filters-border-light"
+                      role="combobox"
+                      type="button"
+                      aria-haspopup="listbox"
+                      aria-controls="select-dropdown"
+                      data-value=""
+                    ></button>
+                    <div class="select-dropdown-container ingredients-dropdown hidden">
+                      <div class="select-inner-container">
+                        <ul class="select-dropdown-list ingredients-list" role="listbox" id="select-dropdown"></ul>
+                      </div>
+                    </div>
                     <svg class="dropdown-array-icon dropdown-fill-light">
                       <use href="./images/sprite.svg#icon-arrow-down"></use>
                     </svg>

@@ -25,9 +25,15 @@ const navLinks = document.querySelectorAll('.header-nav-list-item__link');
 
 const categoriesList = document.querySelector('.categories-list');
 const popularRecipesList = document.querySelector('.popular-recipes-list');
-const ingredientsList = document.querySelector('.filter-ingredients-select');
-const areasList = document.querySelector('.filter-area-select');
-const timeList = document.querySelector('.filter-time-select');
+
+const selects = document.querySelectorAll('.select-container');
+const ingredientsSelect = document.querySelector('.filter-ingredients-select');
+const ingredientsList = document.querySelector('.ingredients-list');
+const areaSelect = document.querySelector('.filter-area-select');
+const areasList = document.querySelector('.area-list');
+const timeSelect = document.querySelector('.filter-time-select');
+const timeList = document.querySelector('.time-list');
+
 const recipesList = document.querySelector('.recipes-list');
 
 const categoriesContainer = document.querySelector('.categories-container');
@@ -39,6 +45,8 @@ async function onLoad() {
   switcher.addEventListener('click', onSwitcherClick);
   navLinks.forEach((link) => link.addEventListener('click', onNavLinkClick));
   allCategoriesBtn.addEventListener('click', onCategoriesClick);
+  selects.forEach((item) => item.addEventListener('click', onSelectClick));
+  document.addEventListener('mouseup', onDropdownClose);
 
   defineActivePage();
   createTimeList();
@@ -53,6 +61,9 @@ async function onLoad() {
 
   const categories = categoriesContainer.querySelectorAll('.category-item-button');
   categories.forEach((btn) => btn.addEventListener('click', onCategoriesClick));
+
+  const selectOptions = document.querySelectorAll('.select-option');
+  selectOptions.forEach((item) => item.addEventListener('click', onSelectOption));
 }
 
 function defineActivePage() {
@@ -168,29 +179,39 @@ async function createAreasOptions() {
   const markup = areas.map(({ name }, index) => {
     return index === 0
       ? `
-        <option class="select-option filters-light-font" value="" selected disabled>Select</option>
+        <li class="select-option" role="option">
+          <button type="button" class="select-option-btn filters-light-font" data-value="">Select</button>
+        </li>
       `
       : `
-        <option class="select-option filters-light-font" value="${name}">${name}</option>
+        <li class="select-option" role="option">
+          <button type="button" class="select-option-btn filters-light-font" data-value="${name}">${name}</button>
+        </li>
       `;
   });
 
   areasList.insertAdjacentHTML('beforeend', markup.join(''));
+  areaSelect.textContent = areasList.children[0].firstElementChild.textContent;
 }
 
 async function createIngredientsOptions() {
   const options = await fetchIngredients();
-  const markup = options.map(({ name }, index) => {
+  const markup = options.map(({ _id, name }, index) => {
     return index === 0
       ? `
-        <option class="select-option filters-light-font" value="" selected disabled>Select</option>
+        <li class="select-option" role="option">
+          <button type="button" class="select-option-btn filters-light-font" data-value="">Select</button>
+        </li>
       `
       : `
-        <option class="select-option filters-light-font" value="${name}">${name}</option>
+        <li class="select-option" role="option">
+          <button type="button" class="select-option-btn filters-light-font" data-value="${_id}">${name}</button>
+        </li>
       `;
   });
 
   ingredientsList.insertAdjacentHTML('beforeend', markup.join(''));
+  ingredientsSelect.textContent = ingredientsList.children[0].firstElementChild.textContent;
 }
 
 function createTimeList() {
@@ -202,11 +223,20 @@ function createTimeList() {
   for (let i = start; i <= stop; i += step) {
     markup +=
       i === start
-        ? `<option class="select-option filters-light-font" value="" selected disabled>Select</option>`
-        : `<option class="select-option filters-light-font" value="${i}">${i} min</option>`;
+        ? `
+        <li class="select-option" role="option">
+          <button type="button" class="select-option-btn filters-light-font" data-value="">Select</button>
+        </li>
+      `
+        : `
+        <li class="select-option" role="option">
+          <button type="button" class="select-option-btn filters-light-font" data-value="${i}">${i}</button>
+        </li>
+      `;
   }
 
   timeList.insertAdjacentHTML('beforeend', markup);
+  timeSelect.textContent = timeList.children[0].firstElementChild.textContent;
 }
 
 function onCategoriesClick(evt) {
@@ -220,9 +250,9 @@ function onCategoriesClick(evt) {
 async function getRecipes(selectedCategory) {
   const params = {
     category: selectedCategory,
-    ingredient: ingredientsList.value,
-    area: areasList.value,
-    time: timeList.value,
+    ingredient: ingredientsSelect.dataset.value,
+    area: areaSelect.dataset.value,
+    time: timeSelect.dataset.value,
     page: pageNumber,
     limit: defaultHitsPerPage,
   };
@@ -260,4 +290,37 @@ function createRecipesMarkup(recipes) {
   });
 
   recipesList.innerHTML = markup.join('');
+}
+
+function onSelectClick(evt) {
+  const { currentTarget } = evt;
+  const dropdown = currentTarget.querySelector('.select-dropdown-container');
+  dropdown.classList.toggle('hidden');
+}
+
+function onSelectOption(evt) {
+  const { target, currentTarget } = evt;
+  const selectBtn = currentTarget.closest('.select-dropdown-container').previousElementSibling;
+  selectBtn.textContent = target.textContent;
+  selectBtn.dataset.value = target.dataset.value;
+  getRecipes(allCategoriesBtn.dataset.value);
+}
+
+function onDropdownClose(evt) {
+  const { target } = evt;
+
+  if (
+    !target.classList.contains('select-dropdown-container') &&
+    !target.classList.contains('select-inner-container') &&
+    !target.classList.contains('select-dropdown-list') &&
+    !target.classList.contains('select-option-btn') &&
+    (!target.classList.contains('select-btn') || target.nextElementSibling.classList.contains('hidden'))
+  ) {
+    const dropdownMenus = document.querySelectorAll('.select-dropdown-container');
+    dropdownMenus.forEach((item) => {
+      if (!item.classList.contains('hidden')) {
+        item.classList.add('hidden');
+      }
+    });
+  }
 }
