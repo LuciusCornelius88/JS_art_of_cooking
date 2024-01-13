@@ -22,6 +22,11 @@ export function switchToDark() {
   switchDropdownToDark();
   switchSelectOptionsToDark();
   switchResetBtnToDark();
+  switchRecipeImgToDark();
+  switchRecipeTitleToDark();
+  switchRecipeDescrToDark();
+  switchRecipeRatingToDark();
+  switchRecipeButtonToDark();
   switchPaginationToDark();
 }
 
@@ -46,6 +51,11 @@ export function switchToLight() {
   switchDropdownToLight();
   switchSelectOptionsToLight();
   switchResetBtnToLight();
+  switchRecipeImgToLight();
+  switchRecipeTitleToLight();
+  switchRecipeDescrToLight();
+  switchRecipeRatingToLight();
+  switchRecipeButtonToLight();
   switchPaginationToLight();
 }
 
@@ -70,6 +80,8 @@ export function switcherToLight() {
   switcherRect.classList.remove('switcher-icon-rect__dark');
 }
 
+// Body
+
 function switchBodyToDark() {
   const body = document.querySelector('body');
   body.classList.remove('bg-light');
@@ -81,6 +93,8 @@ function switchBodyToLight() {
   body.classList.remove('bg-dark');
   body.classList.add('bg-light');
 }
+
+// Header
 
 function switchLogoToDark() {
   const logo = document.querySelector('.logo');
@@ -138,6 +152,8 @@ function switchShoppingCardToLight() {
   cardIcon.classList.add('svg-light-fill');
 }
 
+// Hero
+
 function switchHeroTitleToDark() {
   const title = document.querySelector('.hero-title');
   title.classList.remove('hero-light-font');
@@ -177,6 +193,8 @@ function switchHeroButtonToLight() {
   btn.classList.remove('hero-dark-font');
   btn.classList.add('hero-light-font');
 }
+
+// Categories
 
 function switchCategoriesTitleToDark() {
   const title = document.querySelector('.all-categories-btn');
@@ -229,7 +247,9 @@ function switchCategoryItemToLight() {
   //   item.classList.add('bg-light');
   // });
 }
-//
+
+// Popular Recipes
+
 function switchPopularRecipesTitleToDark() {
   const title = document.querySelector('.popular-recipes-title');
   title.classList.remove('popular-recipes-title-light-font');
@@ -273,6 +293,8 @@ function switchPopularRecipeDescrToLight() {
     item.classList.add('popular-recipes-descr-light-font');
   });
 }
+
+// Filters
 
 function switchLabelsToDark() {
   const labels = document.querySelectorAll('.label');
@@ -385,6 +407,88 @@ function switchResetBtnToLight() {
   resetBtn.classList.remove('bg-dark');
   resetBtn.classList.add('bg-light');
 }
+
+// Recipes List
+
+function switchRecipeImgToDark() {
+  const recipeImgs = document.querySelectorAll('.recipe-img-container');
+  recipeImgs.forEach((item) => {
+    item.classList.add('recipes-img-dark-bg');
+  });
+}
+
+function switchRecipeImgToLight() {
+  const recipeImgs = document.querySelectorAll('.recipe-img-container');
+  recipeImgs.forEach((item) => {
+    item.classList.remove('recipes-img-dark-bg');
+  });
+}
+
+function switchRecipeTitleToDark() {
+  const recipeTitles = document.querySelectorAll('.recipe-title');
+  recipeTitles.forEach((item) => {
+    item.classList.remove('recipes-title-light-font');
+    item.classList.add('recipes-title-dark-font');
+  });
+}
+
+function switchRecipeTitleToLight() {
+  const recipeTitles = document.querySelectorAll('.recipe-title');
+  recipeTitles.forEach((item) => {
+    item.classList.remove('recipes-title-dark-font');
+    item.classList.add('recipes-title-light-font');
+  });
+}
+
+function switchRecipeDescrToDark() {
+  const recipeDescr = document.querySelectorAll('.recipe-description');
+  recipeDescr.forEach((item) => {
+    item.classList.remove('recipes-descr-light-font');
+    item.classList.add('recipes-descr-dark-font');
+  });
+}
+
+function switchRecipeDescrToLight() {
+  const recipeDescr = document.querySelectorAll('.recipe-description');
+  recipeDescr.forEach((item) => {
+    item.classList.remove('recipes-descr-dark-font');
+    item.classList.add('recipes-descr-light-font');
+  });
+}
+
+function switchRecipeRatingToDark() {
+  const ratings = document.querySelectorAll('.recipe-rating');
+  ratings.forEach((item) => {
+    item.classList.remove('recipes-rating-light-font');
+    item.classList.add('recipes-rating-dark-font');
+  });
+}
+
+function switchRecipeRatingToLight() {
+  const ratings = document.querySelectorAll('.recipe-rating');
+  ratings.forEach((item) => {
+    item.classList.remove('recipes-rating-dark-font');
+    item.classList.add('recipes-rating-light-font');
+  });
+}
+
+function switchRecipeButtonToDark() {
+  const recipeBtns = document.querySelectorAll('.see-recipe-btn');
+  recipeBtns.forEach((item) => {
+    item.classList.remove('recipes-button-light-font');
+    item.classList.add('recipes-button-dark-font');
+  });
+}
+
+function switchRecipeButtonToLight() {
+  const recipeBtns = document.querySelectorAll('.see-recipe-btn');
+  recipeBtns.forEach((item) => {
+    item.classList.remove('recipes-button-dark-font');
+    item.classList.add('recipes-button-light-font');
+  });
+}
+
+// Pagination
 
 function switchPaginationToDark() {
   const btns = document.querySelectorAll('.numbered-btn');

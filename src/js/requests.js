@@ -58,13 +58,13 @@ export async function fetchRecipes(params) {
   }
 }
 
-export async function fetchTime() {
-  const { recipesBaseEndpoint } = requestConfig;
+// export async function fetchTime() {
+//   const { recipesBaseEndpoint } = requestConfig;
 
-  try {
-    const result = await axiosInstanse.get(recipesBaseEndpoint);
-    return result;
-  } catch (error) {
-    console.log('error :>> ', error);
-  }
-}
+//   try {
+//     const result = await axiosInstanse.get(recipesBaseEndpoint);
+//     return result;
+//   } catch (error) {
+//     console.log('error :>> ', error);
+//   }
+// }

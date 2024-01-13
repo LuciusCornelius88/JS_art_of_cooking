@@ -8,7 +8,7 @@ import {
   switchToLight,
 } from './switch_theme_functions.js';
 
-import { fetchCategories, fetchPopularRecipes, fetchRecipes, fetchAreas, fetchIngredients, fetchTime } from './requests.js';
+import { fetchCategories, fetchPopularRecipes, fetchRecipes, fetchAreas, fetchIngredients } from './requests.js';
 import { defaultHitsPerPage } from './config.js';
 
 const ACTIVE_NAVLINK_KEY = 'current_active_navlink';
@@ -47,13 +47,12 @@ async function onLoad() {
   await createPopularRecipes();
   await createAreasOptions();
   await createIngredientsOptions();
+  await getRecipes(allCategoriesBtn.dataset.value);
 
   defineSwitcherStatus();
 
   const categories = categoriesContainer.querySelectorAll('.category-item-button');
   categories.forEach((btn) => btn.addEventListener('click', onCategoriesClick));
-
-  // getRecipes();
 }
 
 function defineActivePage() {
@@ -230,24 +229,27 @@ async function getRecipes(selectedCategory) {
 
   const recipes = await fetchRecipes(params);
   createRecipesMarkup(recipes.results);
-  console.log(recipes);
 }
 
 function createRecipesMarkup(recipes) {
   const markup = recipes.map(({ thumb, title, description, rating }) => {
+    const imgContainer = document.createElement('div');
+    imgContainer.classList.add('recipe-img-container');
+    imgContainer.style.background = `linear-gradient(1deg, rgba(5, 5, 5, 0.60) 4.82%, rgba(5, 5, 5, 0.00) 108.72%), url('${thumb}'), lightgray -99px -69px / 189.2% 164.808% no-repeat`;
+
     return `
       <li class="recipe-list-item">
-        <div class="recipe-img-container">
-          <img src="${thumb}" alt="${title}" class="recipe-img" />
-        </div>
+        ${imgContainer.outerHTML}
         <div class="recipe-content-container">
+          <p class="recipe-title recipes-title-light-font">${title}</p>
           <div class="recipe-description-container">
-            <p class="recipe-title">${title}</p>
-            <p class="recipe-description">${description}</p>
+            <p class="recipe-description recipes-descr-light-font">${description}</p>
           </div>
           <div class="recipe-actions-container">
-            <div class="recipe-rating-container">${rating}</div>
-            <button class="see-recipe-btn">See recipe</button>
+            <div class="recipe-rating-container">
+              <p class="recipe-rating recipes-rating-light-font">${rating}</p>
+            </div>
+            <button class="see-recipe-btn recipes-button-light-font">See recipe</button>
           </div>
         </div>
         <svg class="like-icon">

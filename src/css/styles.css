@@ -209,7 +209,7 @@ section {
 
 /* Recipes */
 
-.recipes-light-font {
+.recipes-title-light-font {
   color: #f8f8f8;
 }
 
@@ -217,16 +217,32 @@ section {
   color: #fff;
 }
 
-.recipes-button-dark-font {
-  color: #fff;
+.recipes-button-light-font {
+  color: #f8f8f8;
 }
 
 .recipes-descr-dark-font {
   color: rgba(255, 255, 255, 0.8);
 }
 
+.recipes-rating-light-font {
+  color: #f8f8f8;
+}
+
 .recipes-rating-dark-font {
   color: rgba(255, 255, 255, 0.5);
+}
+
+.recipes-button-dark-font {
+  color: #fff;
+}
+
+.recipes-descr-light-font {
+  color: #f8f8f8;
+}
+
+.recipes-img-dark-bg {
+  background: linear-gradient(1deg, #050505 4.82%, rgba(5, 5, 5, 0) 108.72%), lightgray -36.5px 0px / 129.2% 112.544% no-repeat;
 }
 
 /* Pagination */
@@ -522,6 +538,8 @@ section {
 
 /* ================== RECIPES ================== */
 
+/* Filters list */
+
 .filters-container {
   margin-bottom: 14px;
 }
@@ -640,6 +658,8 @@ section {
   height: 16px;
 }
 
+/* Recipes list */
+
 .recipes-list {
   display: flex;
   column-gap: 16px;
@@ -659,6 +679,62 @@ section {
   left: 16px;
 }
 
+.recipe-title {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.28;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.recipe-description-container {
+  width: 218px;
+  height: 32px;
+  margin-bottom: 16px;
+}
+
+.recipe-description {
+  max-height: inherit;
+  color: #f8f8f8;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.33;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.recipe-actions-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.recipe-rating {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.285;
+}
+
+.see-recipe-btn {
+  width: 93px;
+  height: 31px;
+  padding: 8px, 16px;
+  text-align: center;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  border: none;
+  border-radius: 8px;
+  background-color: #9bb537;
+}
+
 .like-icon {
   position: absolute;
   width: 22px;
@@ -670,13 +746,7 @@ section {
   overflow: hidden;
   width: 250px;
   height: 287px;
-}
-
-.recipe-img {
-  width: 100%;
-  height: 100%;
-
-  object-fit: cover;
+  display: block;
 }
 
 /* PAGINATION */
@@ -758,5 +828,3 @@ section {
   left: 60%;
   transform: translate(-50%, -50%);
 }
-
-/*  */
